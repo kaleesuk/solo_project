@@ -1,0 +1,23 @@
+<h1>Account</h1>
+<a href = "/dashboard">Home</a>
+<a href = "/products">Products</a>
+<a href = "/cart">Cart</a>
+<a href = "/logout">Logout</a>
+<form action= "/edit" method= "POST">
+    <p>First Name: </p>
+    <input type = "text" name = "first_name">
+    <p>Last Name: </p>
+    <input type = "text" name = "last_name">
+    <p>Email: </p>
+    <input type = "text" name = "email">
+    <p>Password: </p>
+    <input type = "text" name = "password">
+    <input type = "submit" value = "Edit">
+</form>
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}

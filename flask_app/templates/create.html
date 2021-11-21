@@ -1,0 +1,22 @@
+<h1>Fresh</h1>
+<h2>It's Never Too Late To Join</h2>
+<form action = "/new_user" method = "POST">
+    <label name = "first_name">First Name: </label>
+    <input type = "text" name = "first_name">
+    <label name = "last_name">Last Name: </label>
+    <input type = "text" name = "last_name">
+    <label name = "email">Email: </label>
+    <input type = "text" name = "email">
+    <label name = "password">Password: </label>
+    <input type = "text" name = "password">
+    <label name = "password_confirm">Confirm Password: </label>
+    <input type = "text" name = "password_confirm">
+    <input type = "submit" value = "Create">
+</form>
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
