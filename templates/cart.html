@@ -1,0 +1,17 @@
+<h1>Cart</h1>
+<a href = "/dashboard">Home</a>
+<a href = "/products">Products</a>
+<a href = "/account">Account</a>
+<a href = "/logout">Logout</a>
+{% for product in temp %}  
+        <p>{{product.get('name)')}} {{product.get('price')}} {{'x'}} {{temp[product]}} <a href = "/add/{{product.product_id}}">Add</a> <a href = "/remove/{{product.product_id}}">Remove</a></p>
+{% endfor %}
+<h2>Total Price: ${{total}}</h2>
+<h2><a href = "/new">Proceed To Checkout</a></h2>
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
